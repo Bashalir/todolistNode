@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Todo List</title>
+  </head>
+
+  <body>
+    <h1>Todo List</h1>
+
+    <ul>
+      <% if (todolist) { %> <% todolist.todos.forEach(function(todo,index) { %>
+      <li>
+        <%= todo %>
+        <form action="/remove" method="POST">
+          <input type="hidden" name="index" value="<%=index%>" />
+          <button type="submit" name="<%=index%>">X</button>
+        </form>
+      </li>
+      <% });} %>
+    </ul>
+
+    <form action="/add" method="POST">
+      <label for="todo">Todo:</label>
+      <input type="text" name="todo" />
+      <input type="submit" />
+    </form>
+  </body>
+</html>

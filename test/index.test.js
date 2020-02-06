@@ -1,5 +1,4 @@
 const assert = require("chai").assert;
-const expect = require("chai").expect;
 const TodoList = require("../todolist");
 const EMPTY = 0;
 
@@ -48,8 +47,4 @@ describe("todolist", () => {
     todoList.remove(0);
     assert.deepEqual(todoList.todos, ["todo2"]);
   });
-
-
-
-
 });

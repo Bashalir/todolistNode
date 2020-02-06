@@ -15,7 +15,7 @@ class TodoList {
     if (this.isEmpty()) {
       throw "list is empty";
     }
-    this.todos.splice(index, index + 1);
+    this.todos.splice(index, 1);
   }
 }
 

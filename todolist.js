@@ -8,7 +8,9 @@ class TodoList {
   }
 
   add(task) {
-    this.todos.push(task);
+    if (task != "") {
+      this.todos.push(task);
+    }
   }
 
   remove(index) {

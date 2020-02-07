@@ -47,4 +47,10 @@ describe("todolist", () => {
     todoList.remove(0);
     assert.deepEqual(todoList.todos, ["todo2"]);
   });
+
+  it("should a empty input dont add a todo ", function() {
+    const todoList = new TodoList();
+    todoList.add("");
+    assert.equal(todoList.todos.length, 0);
+  });
 });
